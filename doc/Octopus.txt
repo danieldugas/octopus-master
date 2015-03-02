@@ -1,0 +1,38 @@
+Hybrid labs inc. presents
+
+
+                                    . .
+                                  .     .
+                                  .     .
+                                    . .
+
+
+                      O    C    T    O    P    U    S
+
+Pre-release notes:
+
+Expected behaviour - 
+select text, assign to register. Text stays highlighted (see :h signs),
+cursor is free to move. Once multiple selections are made, 
+Octopus can manipulate them.
+if called from normal mode, each tentacle acts like a collection of cursors
+if called from visual mode, each tentacle acts like " " of selections
+
+
+Options
+
+g:OctopusHighlightPriority  default = -1
+
+negative value means that Tentacle highlighting will be hidden behind
+search or visual highlighting (see :h matchadd )
+
+CURENT WORK:
+
+- avoid creating several cursors in the same location ( Tentacle.moveCursorToLastSucker ) x
+- create sucker.updateContent() function x
+- when activating a tentacle, current mode is new tentacle mode or old mode? option?
+- deal with virtual lines (folds)
+- deal with tentacle overlap
+- suckers as a table in tentacle. 
+  for i in range(1, tentacle.suckers) -> for currentsucker in tentacle.suckers
+
